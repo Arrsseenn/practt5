@@ -1,26 +1,28 @@
-function calculateU(x, alpha, g) {
-    if (x < 0) {
-        return Math.sin(x) - Math.log10(-x);
-    } else if (x === 0) {
-        return 0;
-    } else {
-        return alpha * Math.pow(g, 3) * x;
-    }
-}
+document.addEventListener('DOMContentLoaded', () => {
+    const submitButton = document.getElementById('submitButton');
+    const result = document.getElementById('result');
 
-function calculate() {
-    let start = parseFloat(document.getElementById('start').value);
-    let end = parseFloat(document.getElementById('end').value);
-    let step = parseFloat(document.getElementById('step').value);
+    submitButton.addEventListener('click', () => {
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirmPassword').value;
+        const firstName = document.getElementById('firstName').value;
+        const lastName = document.getElementById('lastName').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
 
-    const alpha = 2.0;  
-    const g = 1.5;  
+        if (password !== confirmPassword) {
+            result.textContent = 'Паролі не співпадають. Будь ласка, спробуйте ще раз.';
+            result.style.color = 'red';
+            return;
+        }
 
-    let results = "Результати обчислень:\n";
-    for (let x = start; x <= end; x += step) {
-        let u = calculateU(x, alpha, g);
-        results += `x = ${x}, U(x) = ${u}\n`;
-    }
-
-    document.getElementById('results').textContent = results;
-}
+        if (!username || !password || !confirmPassword || !firstName || !lastName || !email || !phone) {
+            result.textContent = 'Будь ласка, заповніть всі поля.';
+            result.style.color = 'red';
+            return;
+        }
+        result.textContent = 'Реєстрація успішна!';
+        result.style.color = 'green';      
+    });
+});

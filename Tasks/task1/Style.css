@@ -1,27 +1,10 @@
-table {
-    width: 100%;
-    border: 0;
+body {
+    font-family: Arial, sans-serif;
     text-align: center;
+    margin-top: 50px;
 }
 
-.visit-card {
-    border-style: dashed;
-    border-width: thin;
-    text-align: center;
-}
-
-img {
-    max-width: 100px; /* Розмір зображення */
-}
-
-b {
-    font-size: 1.2em; /* Жирний текст */
-}
-
-i {
-    font-size: 1em; /* Курсив */
-}
-
-font {
-    color: blue; /* Синій колір тексту */
+select {
+    padding: 10px;
+    font-size: 16px;
 }

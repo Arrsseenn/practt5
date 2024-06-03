@@ -1,23 +1,13 @@
-function oneclick(name){
-alert(name)
+document.addEventListener('DOMContentLoaded', () => {
+    const input1 = document.getElementById('input1');
+    const input2 = document.getElementById('input2');
+    const checkButton = document.getElementById('checkButton');
+    const result = document.getElementById('result');
 
-}
-var Gor = document.getElementById("gor");
-var Cuc = document.getElementById("cuc");
-var Shu = document.getElementById("shu");
-var Aim = document.getElementById("aim");
-var She = document.getElementById("she");
-
-Gor.addEventListener('click',() => oneclick('Ті, що виїздять за море, міняють небо, а не душу.'))
-
-Cuc.addEventListener('click',() => oneclick('Для нас дорогі батьки, дорогі діти, близькі, родичі; але всі уявлення про любов до чого-небудь поєднані в одному слові «вітчизна».'))
-
-Shu.addEventListener('click',() => oneclick('Мова — це глибина тисячоліть.'));
-
-Aim.addEventListener('click',() => oneclick('Той, хто в біді кидає свій народ, стає його ворогом.'));
-
-She.addEventListener('click',() => oneclick('Де немає свободи, там немає і вітчизни.'));
-
-
-
-
+    checkButton.addEventListener('mouseover', () => {
+        const a = input1.checked;
+        const b = input2.checked;
+        const output = a && b;
+        result.textContent = `Результат логічної операції "І": ${output}`;
+    });
+});
